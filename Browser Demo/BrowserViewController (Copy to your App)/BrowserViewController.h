@@ -25,7 +25,7 @@
 
 
 #import <UIKit/UIKit.h>
-#import "MyApplication.h"
+//#import "MyApplication.h"
 
 // The names of the images for the 'back' and 'forward' buttons in the toolbar.
 #define PNG_BUTTON_FORWARD @"right.png"
@@ -61,14 +61,14 @@ UIActionSheetDelegate
     UIBarButtonItem *actionButton;
 }
 
-@property(nonatomic, retain) NSURL *url;
-@property(nonatomic, retain) UIWebView *webView;
-@property(nonatomic, retain) UIToolbar *toolbar;
-@property(nonatomic, retain) UIBarButtonItem *backButton;
-@property(nonatomic, retain) UIBarButtonItem *forwardButton;
-@property(nonatomic, retain) UIBarButtonItem *stopButton;
-@property(nonatomic, retain) UIBarButtonItem *reloadButton;
-@property(nonatomic, retain) UIBarButtonItem *actionButton;
+@property(strong, nonatomic) NSURL *url;
+@property(strong, nonatomic) UIWebView *webView;
+@property(strong, nonatomic) UIToolbar *toolbar;
+@property(strong, nonatomic) UIBarButtonItem *backButton;
+@property(strong, nonatomic) UIBarButtonItem *forwardButton;
+@property(strong, nonatomic) UIBarButtonItem *stopButton;
+@property(strong, nonatomic) UIBarButtonItem *reloadButton;
+@property(strong, nonatomic) UIBarButtonItem *actionButton;
 
 // Initializes the BrowserViewController with a specific URL 
 - (id)initWithUrls:(NSURL*)u;

@@ -47,10 +47,10 @@
     if(buttonIndex == [uias cancelButtonIndex]) return;
         
     // user pressed "Open in Safari"
-    if([[uias buttonTitleAtIndex:buttonIndex] compare:ACTION_OPEN_IN_SAFARI] == NSOrderedSame)
+    /*if([[uias buttonTitleAtIndex:buttonIndex] compare:ACTION_OPEN_IN_SAFARI] == NSOrderedSame)
     {
-        [(MyApplication*)[UIApplication sharedApplication] openURL:self.url forceOpenInSafari:YES];
-    }
+        [[UIApplication sharedApplication] openURL:self.url forceOpenInSafari:YES];
+    }*/
     
     // TODO add your own actions here, like email the URL.
 }
@@ -59,22 +59,6 @@
 /**********************************************************************************************************************/
 #pragma mark - Object lifecycle
 
-
-- (void)dealloc
-{
-    [webView setDelegate:nil];
-    [webView release];
-    [url release];
-    [activityIndicator release];
-    
-    [forwardButton release];
-    [backButton release];
-    [stopButton release];
-    [reloadButton release];
-    [actionButton release];
-
-    [super dealloc];
-}
 
 
 - (id)initWithUrls:(NSURL*)u
@@ -137,8 +121,6 @@
     if([activityIndicator isAnimating]) [toolbarButtons replaceObjectAtIndex:4 withObject:self.stopButton];
     
     [self.toolbar setItems:toolbarButtons animated:YES];
-    [toolbarButtons release];
-    [flexibleSpace release];
     
     // page title
     NSString *pageTitle = [self.webView stringByEvaluatingJavaScriptFromString:@"document.title"];
@@ -151,7 +133,7 @@
     [super viewDidLoad];
     
     self.webView.scalesPageToFit = YES;
-    self.navigationItem.rightBarButtonItem = [[[UIBarButtonItem alloc] initWithCustomView:activityIndicator] autorelease];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:activityIndicator];
     
     [self.webView loadRequest:[NSURLRequest requestWithURL:self.url]];
     [self updateToolbar];
@@ -216,7 +198,6 @@
                                              otherButtonTitles:ACTION_OPEN_IN_SAFARI, nil];
     
     [uias showInView:self.view];
-    [uias release];
 }
 
 
