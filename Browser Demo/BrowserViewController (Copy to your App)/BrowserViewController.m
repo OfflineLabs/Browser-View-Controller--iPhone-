@@ -47,10 +47,10 @@
     if(buttonIndex == [uias cancelButtonIndex]) return;
         
     // user pressed "Open in Safari"
-    /*if([[uias buttonTitleAtIndex:buttonIndex] compare:ACTION_OPEN_IN_SAFARI] == NSOrderedSame)
+    if([[uias buttonTitleAtIndex:buttonIndex] compare:ACTION_OPEN_IN_SAFARI] == NSOrderedSame)
     {
-        [[UIApplication sharedApplication] openURL:self.url forceOpenInSafari:YES];
-    }*/
+        [[UIApplication sharedApplication] openURL:self.url];
+    }
     
     // TODO add your own actions here, like email the URL.
 }
