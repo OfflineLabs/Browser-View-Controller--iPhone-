@@ -49,7 +49,7 @@
     // user pressed "Open in Safari"
     if([[uias buttonTitleAtIndex:buttonIndex] compare:ACTION_OPEN_IN_SAFARI] == NSOrderedSame)
     {
-        [[UIApplication sharedApplication] openURL:self.url];
+        [[UIApplication sharedApplication] openURL:self.webView.request.URL];
     }
     
     // TODO add your own actions here, like email the URL.
@@ -181,7 +181,7 @@
     }
     else
     {
-        NSURLRequest *request = [NSURLRequest requestWithURL:self.url];
+        NSURLRequest *request = [NSURLRequest requestWithURL:self.webView.request.URL];
         [self.webView loadRequest:request];
     }
     
