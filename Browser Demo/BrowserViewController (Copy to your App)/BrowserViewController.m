@@ -93,6 +93,7 @@
         self.actionButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction
                                                                           target:self
                                                                           action:@selector(actionButtonPressed:)];
+        self.hidesBottomBarWhenPushed = YES;
     }
     
     return self;
