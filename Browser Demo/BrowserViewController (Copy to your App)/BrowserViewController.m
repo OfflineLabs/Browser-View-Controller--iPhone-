@@ -26,6 +26,8 @@
 
 #import "BrowserViewController.h"
 
+#import "UIViewController+Utils.h"
+
 @implementation BrowserViewController
 
 @synthesize webView;
@@ -66,6 +68,8 @@
     self = [self initWithNibName:@"BrowserViewController" bundle:nil];
     if(self)
     {
+        [self setupCustomBackButton];
+        
         self.webView.delegate = self;
         self.url = u;
         
