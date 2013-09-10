@@ -68,6 +68,7 @@
     self = [self initWithNibName:@"BrowserViewController" bundle:nil];
     if(self)
     {
+        [self setupNonExtendedEdges];
         [self setupCustomBackButton];
         
         self.webView.delegate = self;
