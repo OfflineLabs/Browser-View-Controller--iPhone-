@@ -64,11 +64,11 @@ UIActionSheetDelegate
 @property(strong, nonatomic) NSURL *url;
 @property(strong, nonatomic) UIWebView *webView;
 @property(strong, nonatomic) UIToolbar *toolbar;
-@property(strong, nonatomic) UIBarButtonItem *backButton;
-@property(strong, nonatomic) UIBarButtonItem *forwardButton;
-@property(strong, nonatomic) UIBarButtonItem *stopButton;
-@property(strong, nonatomic) UIBarButtonItem *reloadButton;
-@property(strong, nonatomic) UIBarButtonItem *actionButton;
+@property(strong, nonatomic) IBOutlet UIBarButtonItem *backButton;
+@property(strong, nonatomic) IBOutlet UIBarButtonItem *forwardButton;
+@property(strong, nonatomic) IBOutlet UIBarButtonItem *stopButton;
+@property(strong, nonatomic) IBOutlet UIBarButtonItem *reloadButton;
+@property(strong, nonatomic) IBOutlet UIBarButtonItem *actionButton;
 
 // Initializes the BrowserViewController with a specific URL 
 - (id)initWithUrls:(NSURL*)u;

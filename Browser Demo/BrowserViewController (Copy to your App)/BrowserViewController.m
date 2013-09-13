@@ -76,28 +76,36 @@
         
         activityIndicator = [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(0, 0, 20, 20)];
         
-        self.forwardButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:PNG_BUTTON_FORWARD] 
+        self.forwardButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:PNG_BUTTON_FORWARD]
                                                               style:UIBarButtonItemStylePlain 
                                                              target:self 
                                                              action:@selector(forwardButtonPressed:)];
+        [self setNormalRenderingForBarButtonItem:self.forwardButton];
 
         
         self.backButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:PNG_BUTTON_BACK]
                                                            style:UIBarButtonItemStylePlain 
                                                           target:self 
                                                           action:@selector(backButtonPressed:)];
+        [self setNormalRenderingForBarButtonItem:self.backButton];
          
-        self.stopButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemStop 
-                                                                        target:self 
-                                                                        action:@selector(stopReloadButtonPressed:)];
+        self.stopButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"web_stop.png"]
+                                                           style:UIBarButtonItemStylePlain
+                                                          target:self
+                                                          action:@selector(stopReloadButtonPressed:)];
+        [self setNormalRenderingForBarButtonItem:self.stopButton];
         
-        self.reloadButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh 
-                                                                          target:self 
-                                                                          action:@selector(stopReloadButtonPressed:)];
+        self.reloadButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"web_refresh.png"]
+                                                             style:UIBarButtonItemStylePlain
+                                                            target:self
+                                                            action:@selector(stopReloadButtonPressed:)];
+        [self setNormalRenderingForBarButtonItem:self.reloadButton];
         
-        self.actionButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction
-                                                                          target:self
-                                                                          action:@selector(actionButtonPressed:)];
+        self.actionButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"web_action.png"]
+                                                             style:UIBarButtonItemStylePlain
+                                                            target:self
+                                                            action:@selector(actionButtonPressed:)];
+        [self setNormalRenderingForBarButtonItem:self.actionButton];
         self.hidesBottomBarWhenPushed = YES;
     }
     
