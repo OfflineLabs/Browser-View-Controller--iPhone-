@@ -238,5 +238,18 @@
     [self updateToolbar];
 }
 
+- (BOOL)webView:(UIWebView *)theWebView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType
+{
+    if ([request.URL.scheme isEqualToString:@"maps"]) {
+        if (self.delegate) {
+            return [self.delegate webView:theWebView shouldStartLoadWithRequest:request navigationType:navigationType];
+        }
+        
+        return NO;
+    }
+    
+    return YES;
+}
+
 
 @end

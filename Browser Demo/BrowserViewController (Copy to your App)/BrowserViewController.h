@@ -69,6 +69,7 @@ UIActionSheetDelegate
 @property(strong, nonatomic) IBOutlet UIBarButtonItem *stopButton;
 @property(strong, nonatomic) IBOutlet UIBarButtonItem *reloadButton;
 @property(strong, nonatomic) IBOutlet UIBarButtonItem *actionButton;
+@property(weak, nonatomic) id<UIWebViewDelegate> delegate;
 
 // Initializes the BrowserViewController with a specific URL 
 - (id)initWithUrls:(NSURL*)u;
